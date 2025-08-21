@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      margin: 0;
+      background-color: rgb(244, 224, 235);
+    }
+    
+     /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: rgb(239, 91, 177);
+            position: sticky;
+            top: 0;
+            box-shadow: 2px 2px 6px rgb(79, 6, 71);
+            z-index: 100;
+        }
+        header {
+    display: flex;
+    justify-content: flex-start;  /* نخلي العناصر تمشي من الشمال */
+    align-items: center;
+    padding: 15px 60px;
+    background: rgb(239, 91, 177);
+    position: sticky;
+    top: 0;
+    box-shadow: 2px 2px 6px rgb(79, 6, 71);
+    z-index: 100;
+}
+
+header .logo {
+    margin-right: auto;  /* اللوجو يفضل في الشمال */
+}
+
+nav ul {
+    margin-left: auto;   /* اللينكات كلها تروح أقصى اليمين */
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+        .header:hover{
+             box-shadow:  url('12/aa95176b12825142.jpg');
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            
+        }
+
+        .logo span {
+            color: rgb(91, 5, 81);
+           font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+           
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color:white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color:rgb(91, 5, 81);
+            border-bottom: 5px ;
+            border-radius: 5px;
+            background-image: url('12/aa95176b12825142.jpg');
+            box-shadow: inset;
+            box-sizing: border-box;
+}
+        
+
+        .book-btn {
+            background-color:rgb(91, 5, 81) !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .book-btn:hover{
+            background-image: url('12/aa95176b12825142.jpg');
+
+        }
+
+    .products {
+      display: flex;
+      gap: 20px;   /* مسافة بين الكروت */
+      justify-content: center; /* وسط الصفحة */
+      flex-wrap: wrap; /* يخليهم ينزلوا تحت لو الشاشة صغيرة */
+    }
+
+    .product {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;   /* عرض ثابت للكارت */
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(194, 24, 143, 0.1);
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    .product :hover{
+        background-image: url('12/aa95176b12825142.jpg');
+        transform: scale(75%.75%);
+        box-shadow: 0px 4px 15px rgb(239, 91, 177);
+    }
+
+    .info {
+      margin-top: 10px;
+    }
+
+    .info h3 {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .info p {
+      color: #555;
+      margin: 0;
+    }
+    .img-effect {
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+.img-effect:hover {
+    background-image: url('13/images.jpg');
+  transform: scale(1.1); /* تكبير بسيط */
+}
+/* Booking Form */
+      
+         .booking {
+            background: rgb(239, 91, 177);
+            width: 90%;
+            margin: 70px auto;
+            padding: 50px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 1px 4px 15px rgb(91, 5, 81);
+        }
+        .booking:hover{
+            background-image: url('12/832b1f15b32143a54cf299f21769e895.jpg');
+            box-shadow: 3px 4px 15px rgb(239, 91, 177);
+        }
+        .booking h5{
+             color: rgb(254, 250, 253);
+        }
+.booking h5:hover{
+    color :rgb(91, 5, 81) ;
+}
+        .booking h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .booking :hover{
+    color :rgb(91, 5, 81) ;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-around;
+            justify-content: safe;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+
+        .form-row input {
+            padding: 10px;
+            width: 200px;
+            border: 2px solid ;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+             background-color: white ;
+    
+        }
+
+        .form-row input:focus {
+            border-color: rgb(148, 5, 89);
+            background-color: white ;
+           
+        }
+
+        .booking button {
+            padding: 12px 30px;
+            
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgb(91, 5, 81);
+            font-weight: bold;
+        }
+
+        .booking button:hover {
+            background-image: url('12/aa95176b12825142.jpg');
+            color:rgb(91, 5, 81) ;
+            font-weight: bold;
+
+        }
+        .img{
+            width: 1300px;
+            height: 500px;
+            padding-top: 0%;
+            justify-content: center;
+             align-items: center;
+        }
+        .img-effect {
+  width: 300px;
+  transition: transform 0.3s ease;
+  
+}
+.img-effect:hover {
+  transform: scale(1.1); 
+  border-color: rgb(125, 5, 123);
+}
+
+  </style>
+</head>
+ <!-- Header -->
+    <header>
+        <div class="logo"><span>G</span>irl's World</div>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#buy">Buy </a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#accessory" class="book-btn" >Accessory</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // ================== 1) سلايدر متطور ==================
+    let sliderIndex = 0;
+    const sliderImages = [
+       "12/78300_1684605437.jpg",
+        "12/AAAABap9plA4TjaOmd3Y10dWVtjf4ARX7QvWaq1DRuT5aPY5FLt5Ga1NsXhFA3OtdhBWJ9AMdVnTIRs2ml5krxZv05QSiZemhqSrAu4a.jpg",
+        "12/hqdefault.jpg"
+    ];
+    const slider = document.querySelector(".img");
+
+    function showSlide(i) {
+        sliderIndex = (i + sliderImages.length) % sliderImages.length;
+        slider.src = sliderImages[sliderIndex];
+    }
+
+    // زرارين للسلايدر
+    let nextBtn = document.createElement("button");
+    let prevBtn = document.createElement("button");
+    nextBtn.innerText = "➡";
+    prevBtn.innerText = "⬅";
+    [nextBtn, prevBtn].forEach(btn => {
+        btn.style.position = "absolute";
+        btn.style.top = "100%";
+        btn.style.transform = "translateY(-50%)";
+        btn.style.fontSize = "20px";
+        btn.style.padding = "10px";
+        btn.style.cursor = "pointer";
+        btn.style.background = "rgba(239,91,177,0.7)";
+        btn.style.color = "white";
+        btn.style.border = "none";
+        btn.style.borderRadius = "50%";
+    });
+    nextBtn.style.right = "30px";
+    prevBtn.style.left = "30px";
+    slider.parentElement.style.position = "relative";
+    slider.parentElement.appendChild(nextBtn);
+    slider.parentElement.appendChild(prevBtn);
+
+    nextBtn.onclick = () => showSlide(sliderIndex + 1);
+    prevBtn.onclick = () => showSlide(sliderIndex - 1);
+
+    setInterval(() => showSlide(sliderIndex + 1), 4000);
+
+
+    // ================== 2) نظام العربة ==================
+    let cart = [];
+    const cartBtn = document.createElement("div");
+    cartBtn.innerHTML = "🛒 <span id='cart-count'>0</span>";
+    cartBtn.style.cursor = "pointer";
+    cartBtn.style.fontSize = "20px";
+    cartBtn.style.color = "white";
+    document.querySelector("header").appendChild(cartBtn);
+
+    // عربة التسوق (Sidebar)
+    const cartSidebar = document.createElement("div");
+    cartSidebar.style.position = "fixed";
+    cartSidebar.style.top = "0";
+    cartSidebar.style.right = "-400px";
+    cartSidebar.style.width = "350px";
+    cartSidebar.style.height = "100%";
+    cartSidebar.style.background = "#fff";
+    cartSidebar.style.boxShadow = "-3px 0 10px rgba(0,0,0,0.3)";
+    cartSidebar.style.padding = "20px";
+    cartSidebar.style.transition = "0.3s";
+    cartSidebar.style.zIndex = "1000";
+    cartSidebar.innerHTML = "<h2>🛒 Your Cart</h2><ul id='cart-list'></ul><h3 id='total'>Total: 0p</h3><button id='checkout'>Checkout</button>";
+    document.body.appendChild(cartSidebar);
+
+    cartBtn.onclick = () => {
+        cartSidebar.style.right = cartSidebar.style.right === "0px" ? "-400px" : "0px";
+    };
+
+    // إضافة زر Add to Cart لكل منتج
+    const products = document.querySelectorAll(".product");
+    products.forEach(product => {
+        let btn = document.createElement("button");
+        btn.innerText = "Add to Cart";
+        btn.style.marginTop = "10px";
+        btn.style.padding = "8px";
+        btn.style.background = "rgb(239,91,177)";
+        btn.style.color = "white";
+        btn.style.border = "none";
+        btn.style.borderRadius = "5px";
+        btn.style.cursor = "pointer";
+        product.appendChild(btn);
+
+        btn.addEventListener("click", () => {
+            const name = product.querySelector("h3").innerText;
+            const price = parseInt(product.querySelector("p").innerText.replace(/\D/g, ""));
+            cart.push({ name, price });
+            updateCart();
+        });
+    });
+
+    function updateCart() {
+        const cartList = document.getElementById("cart-list");
+        cartList.innerHTML = "";
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price;
+            let li = document.createElement("li");
+            li.innerHTML = `${item.name} - ${item.price}p <button onclick="removeItem(${index})">❌</button>`;
+            li.style.marginBottom = "10px";
+            cartList.appendChild(li);
+        });
+        document.getElementById("cart-count").innerText = cart.length;
+        document.getElementById("total").innerText = `Total: ${total}p`;
+    }
+
+    window.removeItem = function (index) {
+        cart.splice(index, 1);
+        updateCart();
+    };
+
+    // ================== 3) فورم الشراء ==================
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (cart.length === 0) {
+            alert("❌ Cart is empty!");
+            return;
+        }
+
+        showModal("✅ Thank you! Your order has been placed successfully.");
+        cart = [];
+        updateCart();
+        form.reset();
+    });
+
+    // ================== 4) Modal رسالة منبثقة ==================
+    function showModal(msg) {
+        let modal = document.createElement("div");
+        modal.style.position = "fixed";
+        modal.style.top = "0";
+        modal.style.left = "0";
+        modal.style.width = "100%";
+        modal.style.height = "100%";
+        modal.style.background = "rgba(0,0,0,0.6)";
+        modal.style.display = "flex";
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
+        modal.style.zIndex = "2000";
+
+        let box = document.createElement("div");
+        box.style.background = "white";
+        box.style.padding = "30px";
+        box.style.borderRadius = "10px";
+        box.style.textAlign = "center";
+        box.style.width = "300px";
+        box.innerHTML = `<h3>${msg}</h3><button>Close</button>`;
+
+        box.querySelector("button").onclick = () => modal.remove();
+
+        modal.appendChild(box);
+        document.body.appendChild(modal);
+    }
+
+});
+</script>
+
+<div>
+    <section class="img-effect" id="home">
+ <img src="12/78300_1684605437.jpg"  class="img" class="img-effect">
+    </section>
+    </div>
+    <script>
+// Smooth scroll for all internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+</script>
+
+    <div class="booking" id="WELCOME">
+        <h2>WELCOME IN GIRL'S WORLD</h2>
+       <h5> "Discover our special collection for little girls: clothes, toys, and accessories made with love."
+
+        "From soft touches to bright colors – our products make every day more magical."
+
+         "We’re here to bring your princess comfort, style, and happiness."</h5>
+    </div>
+
+    <section class="products" id="accessory">
+
+    <div class="product">
+      <img src="12/pngtree-newborn-baby-girl-dress-png-image_12591482.png" alt="Girl dress">
+      <div class="info">
+        <h3>Girl dress</h3>
+        <p>Price: 250p</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="12/pngtree-adorable-pink-baby-onesie-with-teddy-bear-and-pacifier-png-image_21102887.png" alt="Adorable pink baby">
+      <div class="info">
+        <h3>Adorable pink baby</h3>
+        <p>Price: 400p</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="12/pngtree-baby-booties-pastel-colors-soft-fuzzy-texture-blue-and-pink-tiny-png-image_13917142.png" alt="Baby Boots">
+      <div class="info">
+        <h3>Baby Boots</h3>
+        <p>Price: 400p</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="12/H78344432f97845ff8c5cf2b6c3f85d4f2.jpg" alt="Baby Boots">
+      <div class="info">
+        <h3>Baby Boots</h3>
+        <p>Price: 400p</p>
+      </div>
+      
+    </div>
+
+  
+  <hr>
+ 
+    
+
+    <div class="product">
+      <img src="12/png-clipart-hair-accessories-small-diamond-side-clip-hair-accessories-flower-head-product-kind-headwear-thumbnail.png" alt="Girl dress">
+      <div class="info">
+        <h3>Girl dress</h3>
+        <p>Price: 250p</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="12/png-clipart-pacifier-neonate-neonatalvård-tremblay-en-france-sucette-heart-pacifier-thumbnail.png" alt="Adorable pink baby">
+      <div class="info">
+        <h3>Adorable pink baby</h3>
+        <p>Price: 400p</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="12/Hcf5cc548edf74a68b5ada9a18ebe7207u.png" alt="Baby Boots">
+      <div class="info">
+        <h3>Baby Boots</h3>
+        <p>Price: 400p</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="12/pngtree-a-shiny-pink-baby-pacifier-with-colorful-iridescent-bulb-and-decorative-png-image_16164808.png" alt="Baby Boots">
+      <div class="info">
+        <h3>Baby Boots</h3>
+        <p>Price: 400p</p>
+      </div>
+      
+    </div>
+
+  
+  </section>
+
+<script>
+// Smooth scroll for all internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+</script>
+
+  
+    
+   <!-- Booking Form -->
+    <section class="booking" id="buy">
+        <h2>Buy Now</h2>
+        <form>
+            <div class="form-row">
+                
+                <input type="text" placeholder=" Name" required>
+                <input type="tel" placeholder="Phone" required>
+                <input type="email" placeholder="Email" required>
+                <input type="email" placeholder="Enter Address" required>
+                <input type="text" placeholder="How Pay" required>
+            </div>
+             <hr size="7px">
+            <button type="submit">BUY</button>   <button type="reset">back</button>
+        </form>
+        </section>
+        <script>
+// Smooth scroll for all internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+</script>
+
+        <hr size="9px">
+         <section class="booking" id="about">
+    <div>
+       <strong><h2>About us</h2></strong>
+        <h5>
+            We are a fashion store defined by a sleek black and white
+            design that reflects simplicity and elegance. We believe shopping 
+            should be easy, enjoyable, and inspiring. Our carefully curated pieces
+            are designed to capture refined taste while staying in tune with the latest
+            fashion trends
+            <br><br>
+            <hr size="7px">
+            All Rights Reserved 
+        </h5>     
+        <a href="#"> Back Up</a>
+    </div>
+</section>
+
+        <script>
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section, .booking"); 
+    const links = document.querySelectorAll("nav ul li a");
+
+    // إخفاء كل الأقسام
+    function hideAll() {
+        sections.forEach(sec => sec.style.display = "none");
+    }
+
+    // إظهار قسم معين
+    function showSection(id) {
+        hideAll();
+        const target = document.querySelector(id);
+        if (target) {
+    if (target.classList.contains("products")) {
+        target.style.display = "flex";  // الإكسسوارات تظهر جنب بعض
+    } else {
+        target.style.display = "block"; // باقي الأقسام عادي
+    }
+}
+
+    }
+
+    // عند الضغط على أي لينك
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.getAttribute("href");
+            showSection(id);
+        });
+    });
+
+    // أول ما الصفحة تفتح يظهر Home بس
+    showSection("#home");
+});
+</script>
+
+</script>
+</body>
+</html>
